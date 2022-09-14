@@ -1,4 +1,4 @@
-use crate::models::daily::DailyResponse;
+use crate::models::mgm_gov_tr::daily::DailyResponse;
 use hyper::{Client, Uri, Request, Method, Body};
 use hyper_tls::HttpsConnector;
 

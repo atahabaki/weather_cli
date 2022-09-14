@@ -1,4 +1,4 @@
-use crate::models::live::LiveResponse;
+use crate::models::mgm_gov_tr::live::LiveResponse;
 use hyper::{Client, Uri, Request, Method, Body};
 use hyper_tls::HttpsConnector;
 

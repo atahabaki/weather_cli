@@ -1,4 +1,4 @@
-use crate::models::center::CenterResponse;
+use crate::models::mgm_gov_tr::center::CenterResponse;
 use hyper::{Body, Client, Method, Request, Uri};
 use hyper_tls::HttpsConnector;
 
