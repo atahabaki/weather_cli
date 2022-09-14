@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 pub type DailyResponse = Vec<DailyStat>;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct DailyStat {
   pub en_dusuk_gun1: i64,
