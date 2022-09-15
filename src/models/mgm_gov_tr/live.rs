@@ -1,6 +1,8 @@
 use serde::{Deserialize, Serialize};
 
-use crate::forecast::ToLiveForecast;
+use crate::forecast::{ToLiveForecast, LiveForecast};
+
+use super::Hadise;
 
 pub type LiveResponse = Vec<LiveStat>;
 
@@ -11,7 +13,7 @@ pub struct LiveStat {
   pub deniz_sicaklik: i64,
   pub denize_indirgenmis_basinc: i64,
   pub gorus: i64,
-  pub hadise_kodu: String,
+  pub hadise_kodu: Hadise,
   pub ist_no: i64,
   pub kapalilik: i64,
   pub kar_yukseklik: i64,
@@ -38,10 +40,10 @@ pub struct LiveStat {
   pub deniz_veri_zamani: String,
 }
 
-impl ToLiveForecast for LiveStat {
-  fn to_live_forecast(&self) -> crate::forecast::LiveForecast {
-    crate::forecast::LiveForecast {
-      weather: self.hadise_kodu.clone().into(),
+impl ToLiveForecast<Hadise> for LiveStat {
+  fn to_live_forecast(&self) -> LiveForecast<Hadise> {
+    LiveForecast {
+      weather: self.hadise_kodu.clone(),
       temperature: self.sicaklik.to_string().into(),
       humidity: self.nem.to_string().into(),
       wind_speed: self.ruzgar_hiz.to_string().into(),
