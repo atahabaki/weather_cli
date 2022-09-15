@@ -100,7 +100,7 @@ pub trait ToDailyForecast<W> {
 /// A basic LiveForecast type
 /// This is an intermediate data type. Data of this is used to hold weather
 /// stats, et cetera.
-pub struct LiveForecast<W> where W: ToWeather {
+pub struct LiveForecast<W> {
   pub weather: W,
   pub temperature: Option<String>,
   pub humidity: Option<String>,
