@@ -11,13 +11,17 @@
 
 /// Trait to display the Forecasts.
 pub trait Forecast {
-    /// Shows daily forecasts.
-    fn show_daily_forecast(&self) where Self: ToDailyForecast;
-    /// Shows live weather status.
-    fn show_live_forecast(&self) where Self: ToLiveForecast;
+  /// Shows daily forecasts.
+  fn show_daily_forecast(&self)
+  where
+    Self: ToDailyForecast;
+  /// Shows live weather status.
+  fn show_live_forecast(&self)
+  where
+    Self: ToLiveForecast;
 }
 
-/// A basic DailyForecast type 
+/// A basic DailyForecast type
 /// This is an intermediate data type. Data of this is used to hold weather
 /// stats, et cetera.
 pub struct DailyForecast {
@@ -32,10 +36,10 @@ pub struct DailyForecast {
 
 /// Convert your type to Vector of DailyForecasts.
 pub trait ToDailyForecast {
-    fn to_daily_forecast(&self) -> Vec<DailyForecast>;
+  fn to_daily_forecast(&self) -> Vec<DailyForecast>;
 }
 
-/// A basic LiveForecast type 
+/// A basic LiveForecast type
 /// This is an intermediate data type. Data of this is used to hold weather
 /// stats, et cetera.
 pub struct LiveForecast {
@@ -48,5 +52,5 @@ pub struct LiveForecast {
 
 /// Convert your type to Vector of LiveForecasts.
 pub trait ToLiveForecast {
-    fn to_daily_forecast(&self) -> LiveForecast;
+  fn to_live_forecast(&self) -> LiveForecast;
 }
