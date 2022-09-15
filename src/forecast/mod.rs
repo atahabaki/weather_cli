@@ -48,5 +48,5 @@ pub struct LiveForecast {
 
 /// Convert your type to Vector of LiveForecasts.
 pub trait ToLiveForecast {
-    fn to_daily_forecast(&self) -> Vec<LiveForecast>;
+    fn to_daily_forecast(&self) -> LiveForecast;
 }
